@@ -3,7 +3,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -41,6 +41,11 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --color-lightOrange: #fca99b;
+  --color-lightBlue: #7688Db;
+  --color-darkBlue: #6c7fd8;
+  --color-darkText: #686e7d;
+  --color-lightBg: #F8F8F8;
 }
 
 :root {
