@@ -12,10 +12,10 @@ export default async function Header() {
     const user = await currentUser()
 
     return (
-        <header className="w-full bg-white py-3 border-b border-b-gray-300">
-            <div className="max-w-7xl mx-auto px-4 flex items-center justify-between gap-5">
+        <header className="w-full bg-white py-3 border-b border-b-gray-300 fixed z-50 left-0 top-0 right-0">
+            <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
                 <Link href='/'>
-                    <Image src={logo} alt="logo" className="w-24" priority />
+                    <Image src={logo} alt="logo" className="w-28" priority />
                 </Link>
                 <Form action='search' className="flex-1">
                     <input type="text" name="query" className="w-full max-w-7xl rounded-md hoverEffect bg-gray-50 text-gray-800 px-4 py-2.5 focus:outline-0 focus:ring-2 focus:ring-darkBlue border border-gray-200" placeholder="Search for products ..." />
