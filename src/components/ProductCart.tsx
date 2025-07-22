@@ -3,6 +3,9 @@ import { Product } from "../../sanity.types";
 import { urlFor } from "@/sanity/lib/image";
 import Link from "next/link";
 import ProductCartBar from "./ProductCartBar";
+import { LuStar } from "react-icons/lu";
+import PriceView from "./PriceView";
+import AddToCartBottom from "./AddToCartBottom";
 
 interface ProductsPropsType {
     products: Product[];
@@ -39,8 +42,31 @@ export default function ProductCart({ products }: ProductsPropsType) {
                             </div>
                         )}
                     </div>
-                    <div className="p-5">
-
+                    <div className="p-5 flex flex-col gap-2">
+                        <div className="flex items-center justify-between">
+                            <p className="text-gray-500 font-medium">Special</p>
+                            <div className="text-gray-500 flex items-center gap-1">
+                                {Array.from({ length: 5 }).map((_, index) => {
+                                    const isLastStar = index === 4;
+                                    return (
+                                        <LuStar
+                                            fill={!isLastStar ? "#fca99b" : "transparent"}
+                                            key={index}
+                                            className={`${isLastStar ? "text-gray-500" : "text-lightOrange"}`}
+                                        />
+                                    );
+                                })}
+                            </div>
+                        </div>
+                        <p className="text-base text-gray-600 tracking-wide font-semibold line-clamp-1 capitalize">
+                            {product?.name}
+                        </p>
+                        <PriceView
+                            price={product?.price}
+                            discount={product?.discount}
+                            label={product?.label}
+                        />
+                        <AddToCartBottom product={product} />
                     </div>
                 </div>
             ))}
