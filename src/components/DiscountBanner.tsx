@@ -18,11 +18,11 @@ export default function DiscountBanner({ sales }: { sales: SALE_QUERYResult }) {
                                     <div className="flex-1 p-6 md:px-12">
                                         <Badge
                                             variant="secondary"
-                                            className="mb-2 md:mb-4 text-darkBlue capitalize"
+                                            className="mb-2 md:mb-4 text-darkBlue font-semibold capitalize"
                                         >
                                             {sale?.badge} {sale?.discountAmount}% off
                                         </Badge>
-                                        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight mb-2 md:mb-4">
+                                        <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight mb-2 md:mb-4">
                                             {sale?.title}
                                         </h2>
                                         <p className="text-muted-foreground mb-4">

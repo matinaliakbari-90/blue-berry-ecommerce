@@ -273,6 +273,18 @@ export type PRODUCTS_QUERYResult = Array<{
   label?: string;
   status?: "hot" | "new" | "sale";
 }>;
+// Variable: CATEGORIES_QUERY
+// Query: *[_type == "category"] | order(name asc)
+export type CATEGORIES_QUERYResult = Array<{
+  _id: string;
+  _type: "category";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  slug?: Slug;
+  description?: string;
+}>;
 
 // Query TypeMap
 import "@sanity/client";
@@ -280,5 +292,6 @@ declare module "@sanity/client" {
   interface SanityQueries {
     "*[_type == \"sale\"] | order(name asc)": SALE_QUERYResult;
     "*[_type == \"product\"] | order(name asc)": PRODUCTS_QUERYResult;
+    "*[_type == \"category\"] | order(name asc)": CATEGORIES_QUERYResult;
   }
 }
