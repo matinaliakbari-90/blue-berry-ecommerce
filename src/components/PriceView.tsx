@@ -17,7 +17,7 @@ export default function PriceView({ price, discount, label, className }: PropsTy
                 {price && discount && (
                     <PriceFormatter
                         amount={price + (discount * price) / 100}
-                        className={twMerge("line-through text-xs font-medium")}
+                        className={twMerge("line-through text-xs font-medium", className)}
                     />
                 )}
             </div>

@@ -18,7 +18,7 @@ export default function AddToCartBottom({ product, className }: ProductProps) {
         toast.success("Cart dispatched successfully")
     }
 
-    const itemCount = 0;
+    const itemCount = 1;
 
     return (
         <div>

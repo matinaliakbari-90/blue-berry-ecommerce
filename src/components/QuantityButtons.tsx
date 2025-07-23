@@ -26,13 +26,13 @@ export default function QuantityButtons({ product, className, borderStyle }: Pro
 
     return (
         <div className={twMerge("flex items-center gap-1 pb-2 text-base", borderStyle, className)}>
-            <Button variant="outline" size="icon" className="w-6 h-6" onClick={handleRemoveProduct}>
+            <Button variant="outline"className="w-6 h-6" onClick={handleRemoveProduct}>
                 <HiMinus />
             </Button>
             <span className="font-semibold w-8 text-center text-darkBlue">
                 {itemCount}
             </span>
-            <Button onClick={handleAddProduct} variant="outline" size="icon" className="w-6 h-6" >
+            <Button onClick={handleAddProduct} variant="outline" className="w-6 h-6" >
                 <HiPlus />
             </Button>
         </div>
