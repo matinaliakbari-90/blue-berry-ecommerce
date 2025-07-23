@@ -1,8 +1,14 @@
+import AddToCartBottom from "@/components/AddToCartBottom";
 import PriceView from "@/components/PriceView";
 import { getProductBySlug } from "@/sanity/helpers";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
+
+import { FaRegQuestionCircle } from "react-icons/fa";
+import { FiShare2 } from "react-icons/fi";
 import { LuStar } from "react-icons/lu";
+import { RxBorderSplit } from "react-icons/rx";
+import { TbTruckDelivery } from "react-icons/tb";
 
 export default async function SingleProductPage({
     params
@@ -71,6 +77,45 @@ export default async function SingleProductPage({
                     <p className="text-sm text-gray-600 tracking-wide">
                         {product?.description}
                     </p>
+
+                    {product && <AddToCartBottom product={product} />}
+
+                    <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-b-gray-200 py-5 -mt-2">
+                        <div className="flex items-center gap-2 text-sm text-black hover:text-red-600 hoverEffect">
+                            <RxBorderSplit className="text-lg" />
+                            <p>Compare color</p>
+                        </div>
+                        <div className="flex items-center gap-2 text-sm text-black hover:text-red-600 hoverEffect">
+                            <FaRegQuestionCircle className="text-lg" />
+                            <p>Ask a question</p>
+                        </div>
+                        <div className="flex items-center gap-2 text-sm text-black hover:text-red-600 hoverEffect">
+                            <TbTruckDelivery className="text-lg" />
+                            <p>Delivery & Return</p>
+                        </div>
+                        <div className="flex items-center gap-2 text-sm text-black hover:text-red-600 hoverEffect">
+                            <FiShare2 className="text-lg" />
+                            <p>Share</p>
+                        </div>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-5">
+                        <div className="border border-darkBlue/20 text-center p-3 hover:border-darkBlue hoverEffect rounded-md cursor-default">
+                            <p className="text-base font-semibold text-black">
+                                Free Shipping
+                            </p>
+                            <p className="text-sm text-gray-500">
+                                Free shipping over order $120
+                            </p>
+                        </div>
+                        <div className="border border-darkBlue/20 text-center p-3 hover:border-darkBlue hoverEffect rounded-md cursor-default">
+                            <p className="text-base font-semibold text-black">
+                                Flexible Payment
+                            </p>
+                            <p className="text-sm text-gray-500">
+                                Pay with Multiple Credit Cards
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

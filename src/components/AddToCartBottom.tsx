@@ -8,8 +8,9 @@ import QuantityButtons from "./QuantityButtons";
 import PriceFormatter from "./PriceFormatter";
 
 interface ProductProps {
-    product: Product;
+    product: Product | null;
     className?: string;
+    
 }
 
 export default function AddToCartBottom({ product, className }: ProductProps) {
@@ -18,7 +19,7 @@ export default function AddToCartBottom({ product, className }: ProductProps) {
         toast.success("Cart dispatched successfully")
     }
 
-    const itemCount = 1;
+    const itemCount = 0;
 
     return (
         <div>

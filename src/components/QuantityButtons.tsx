@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 import { Product } from "../../sanity.types";
 
 interface Props {
-    product: Product;
+    product: Product | null;
     className?: string;
     borderStyle?: string;
 }
