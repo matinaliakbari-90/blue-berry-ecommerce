@@ -1,6 +1,6 @@
 import { Category, Product } from "../../sanity.types";
 import Categories from "./Categories";
-import ProductCart from "./ProductCart";
+import ProductsGrid from "./ProductsGrid";
 
 interface PropsType {
     products: Product[];
@@ -25,7 +25,7 @@ export default function ProductsList({ products, title, categories }: PropsType)
                 </div>
             )}
 
-            <ProductCart products={products} />
+            <ProductsGrid products={products} />
         </div>
     );
 }
