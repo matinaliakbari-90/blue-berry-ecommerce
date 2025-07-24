@@ -7,7 +7,7 @@ interface CategoriesProps {
 
 export default function Categories({ categories }: CategoriesProps) {
     return (
-        <div className="py-5 ">
+        <div className="py-5">
             <CategoriesSelector categories={categories} />
         </div>
     );

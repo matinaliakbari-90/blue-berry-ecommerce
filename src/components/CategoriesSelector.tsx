@@ -13,11 +13,11 @@ interface CategoriesPropsType {
     categories: Category[];
 }
 
-export default function CategoriesSelector({categories}: CategoriesPropsType) {
+export default function CategoriesSelector({ categories }: CategoriesPropsType) {
     const [open, setOpen] = useState(false);
     const [value, setValue] = useState("");
     const router = useRouter();
-    
+
     return (
         <Popover open={open} onOpenChange={setOpen}>
             <PopoverTrigger asChild>
@@ -27,9 +27,7 @@ export default function CategoriesSelector({categories}: CategoriesPropsType) {
                     aria-expanded={open}
                     className="w-[200px] justify-between"
                 >
-                    {value
-                        ? categories.find((category) => category?._id === value)?.title
-                        : "Filter by Category"}
+                    {value ? categories.find((category) => category?._id === value)?.title : "Filter by Category"}
                     <ChevronsUpDown className="opacity-50" />
                 </Button>
             </PopoverTrigger>
@@ -41,10 +39,8 @@ export default function CategoriesSelector({categories}: CategoriesPropsType) {
                         onKeyDown={(e) => {
                             if (e.key === "Enter") {
                                 const selectedCategory = categories.find((c) =>
-                                    c.title
-                                        ?.toLowerCase()
-                                        .includes(e.currentTarget.value.toLowerCase())
-                                );
+                                    c.title?.toLowerCase().includes(e.currentTarget.value.toLowerCase()));
+                                
                                 if (selectedCategory?.slug?.current) {
                                     setValue(selectedCategory?._id);
                                     router.push(`/categories/${selectedCategory.slug.current}`);
@@ -67,12 +63,7 @@ export default function CategoriesSelector({categories}: CategoriesPropsType) {
                                     }}
                                 >
                                     {category?.title}
-                                    <Check
-                                        className={cn(
-                                            "ml-auto",
-                                            value === category._id ? "opacity-100" : "opacity-0"
-                                        )}
-                                    />
+                                    <Check className={cn("ml-auto", value === category._id ? "opacity-100" : "opacity-0")} />
                                 </CommandItem>
                             ))}
                         </CommandGroup>

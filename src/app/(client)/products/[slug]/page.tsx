@@ -26,9 +26,9 @@ export default async function SingleProductPage({
                     <div className="w-full md:w-1/2 h-auto border border-darkBlue/20 shadow-md rounded-md group overflow-hidden">
                         <Image
                             src={urlFor(product?.image).url()}
-                            width={700}
-                            height={700}
-                            className="w-full max-h-[550px] object-cover group-hover:scale-110 hoverEffect rounded-md"
+                            width={600}
+                            height={600}
+                            className="w-full max-h-[500px] object-cover group-hover:scale-110 hoverEffect rounded-md"
                             alt="productImage"
                         />
                     </div>
@@ -80,7 +80,7 @@ export default async function SingleProductPage({
 
                     {product && <AddToCartBottom product={product} />}
 
-                    <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-b-gray-200 py-5 -mt-2">
+                    <div className="flex flex-wrap items-center justify-between gap-4 md:gap-2.5 border-b border-b-gray-200 py-5 -mt-2">
                         <div className="flex items-center gap-2 text-sm text-black hover:text-red-600 hoverEffect">
                             <RxBorderSplit className="text-lg" />
                             <p>Compare color</p>
@@ -98,12 +98,12 @@ export default async function SingleProductPage({
                             <p>Share</p>
                         </div>
                     </div>
-                    <div className="flex flex-wrap items-center gap-5">
+                    <div className="flex md:flex-wrap flex-row items-center gap-5">
                         <div className="border border-darkBlue/20 text-center p-3 hover:border-darkBlue hoverEffect rounded-md cursor-default">
                             <p className="text-base font-semibold text-black">
                                 Free Shipping
                             </p>
-                            <p className="text-sm text-gray-500">
+                            <p className="md:text-sm text-[12.5px] text-gray-500">
                                 Free shipping over order $120
                             </p>
                         </div>
@@ -111,7 +111,7 @@ export default async function SingleProductPage({
                             <p className="text-base font-semibold text-black">
                                 Flexible Payment
                             </p>
-                            <p className="text-sm text-gray-500">
+                            <p className="md:text-sm text-[12.5px] text-gray-500">
                                 Pay with Multiple Credit Cards
                             </p>
                         </div>

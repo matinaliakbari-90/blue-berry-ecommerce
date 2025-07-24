@@ -10,7 +10,6 @@ import PriceFormatter from "./PriceFormatter";
 interface ProductProps {
     product: Product | null;
     className?: string;
-
 }
 
 export default function AddToCartBottom({ product, className }: ProductProps) {
