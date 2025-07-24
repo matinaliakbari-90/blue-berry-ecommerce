@@ -20,7 +20,7 @@ export default async function SingleProductPage({
     const product = await getProductBySlug(slug)
 
     return (
-        <div className="mt-44 md:mt-24">
+        <div className="mt-32 md:mt-24">
             <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row gap-10 py-10">
                 {product?.image && (
                     <div className="w-full md:w-1/2 h-auto border border-darkBlue/20 shadow-md rounded-md group overflow-hidden">

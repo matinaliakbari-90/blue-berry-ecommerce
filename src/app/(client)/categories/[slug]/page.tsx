@@ -8,7 +8,7 @@ export default async function CategoriesPage({ params }: { params: Promise<{ slu
 
     return (
         <div className="flex flex-col items-center justify-top bg-gray-100">
-            <div className="max-w-7xl mx-auto p-8 bg-white rounded-lg shadow-md mt-60 md:mt-34 mb-12">
+            <div className="max-w-7xl mx-auto p-8 bg-white rounded-lg shadow-md mt-46 md:mt-34 mb-12">
                 <h1 className="text-2xl md:text-3xl font-bold">
                     Search results for{" "}
                     <span className="text-darkBlue">
