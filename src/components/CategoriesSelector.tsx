@@ -1,7 +1,7 @@
 "use client"
 
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import { Button } from "./ui/button";
 import { Check, ChevronsUpDown } from "lucide-react";
@@ -14,9 +14,19 @@ interface CategoriesPropsType {
 }
 
 export default function CategoriesSelector({ categories }: CategoriesPropsType) {
+
+    const [isClient, setIsClient] = useState(false);
+
     const [open, setOpen] = useState(false);
     const [value, setValue] = useState("");
     const router = useRouter();
+
+    useEffect(() => {
+        setIsClient(true)
+    }, [])
+    if (!isClient) {
+        return null
+    }
 
     return (
         <Popover open={open} onOpenChange={setOpen}>
@@ -40,7 +50,7 @@ export default function CategoriesSelector({ categories }: CategoriesPropsType) 
                             if (e.key === "Enter") {
                                 const selectedCategory = categories.find((c) =>
                                     c.title?.toLowerCase().includes(e.currentTarget.value.toLowerCase()));
-                                
+
                                 if (selectedCategory?.slug?.current) {
                                     setValue(selectedCategory?._id);
                                     router.push(`/categories/${selectedCategory.slug.current}`);

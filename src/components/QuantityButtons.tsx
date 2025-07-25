@@ -5,6 +5,7 @@ import { Button } from "./ui/button";
 import { HiMinus, HiPlus } from "react-icons/hi2";
 import toast from "react-hot-toast";
 import { Product } from "../../sanity.types";
+import useCartStore from "@/store";
 
 interface Props {
     product: Product | null;
@@ -14,19 +15,25 @@ interface Props {
 
 export default function QuantityButtons({ product, className, borderStyle }: Props) {
 
+    const { addItem, removeItem, getItemCount } = useCartStore()
+    const itemCount = getItemCount(product?._id as string);
+
     const handleRemoveProduct = () => {
-        toast.success("Removed clicked")
+        removeItem(product?._id as string)
+        if (itemCount === 1) {
+            toast.success(`${product?.name?.substring(0, 12)}... remove successfully`)
+        }
     }
 
     const handleAddProduct = () => {
-        toast.success("Added clicked")
+        if (itemCount < (product?.stock as number)) {
+            addItem(product as Product)
+        }
     }
-
-    const itemCount = 0
 
     return (
         <div className={twMerge("flex items-center gap-1 pb-2 text-base", borderStyle, className)}>
-            <Button variant="outline" className="w-6 h-6" onClick={handleRemoveProduct}>
+            <Button onClick={handleRemoveProduct} variant="outline" className="w-6 h-6">
                 <HiMinus />
             </Button>
             <span className="font-semibold w-8 text-center text-darkBlue">
