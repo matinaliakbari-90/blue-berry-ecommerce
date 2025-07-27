@@ -3,7 +3,8 @@ import logo from '../../public/images/logo.png';
 import Form from "next/form";
 import Link from "next/link";
 import CartIcon from "./CartIcon";
-import { ShoppingBasket, User } from "lucide-react";
+import { User } from "lucide-react";
+import { BsBasket } from "react-icons/bs";
 import { ClerkLoaded, SignedIn, SignInButton, UserButton } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs/server";
 
@@ -28,7 +29,7 @@ export default async function Header() {
                     <ClerkLoaded>
                         <SignedIn>
                             <Link href="/orders" className="flex items-center text-sm gap-2 border border-gray-300 px-2 py-1 rounded-md shadow-md hover:shadow-none hoverEffect">
-                                <ShoppingBasket className="text-darkBlue w-6 h-6" />
+                                <BsBasket className="text-darkBlue w-6 h-6" />
                                 <div className="flex flex-col">
                                     <p className="text-xs">
                                         <span className="font-semibold">0</span> items
