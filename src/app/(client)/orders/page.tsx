@@ -1,3 +1,4 @@
+import OrdersComponent from "@/components/OrdersComponent";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
@@ -43,7 +44,7 @@ export default async function OrdersPage() {
                                             <TableHead>Status</TableHead>
                                         </TableRow>
                                     </TableHeader>
-                                    {/* <OrdersComponent orders={orders} /> */}
+                                    <OrdersComponent orders={orders} />
                                 </Table>
                                 <ScrollBar orientation="horizontal" />
                             </ScrollArea>
