@@ -46,7 +46,7 @@ export default function CartPage() {
         setLoading(true);
         try {
             const metadata: Metadata = {
-                orderNumber: crypto.randomUUID(),
+                orderNumber: crypto.randomUUID().split("-").join(""),
                 customerName: user?.fullName ?? "Unknown",
                 customerEmail: user?.emailAddresses[0]?.emailAddress ?? "Unknown",
                 clerkUserId: user!.id,

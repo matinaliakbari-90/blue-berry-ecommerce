@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Table, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { getMyOrders } from "@/sanity/helpers";
 import { auth } from "@clerk/nextjs/server";
 import { FileX } from "lucide-react";
 import Link from "next/link";
@@ -17,9 +18,9 @@ export default async function OrdersPage() {
 
     return (
         <div>
-            <div className="max-w-7xl mx-aut py-10">
+            <div className="max-w-7xl mt-25 md:mt-20 mb-31 md:mb-39 mx-auto py-10 px-4">
                 {orders?.length ? (
-                    <Card className="w-full">
+                    <Card className="w-full mt-6 md:mt-0 mb-41 md:mb-48">
                         <CardHeader>
                             <CardTitle className="text-2xl md:text-3xl">Order List</CardTitle>
                         </CardHeader>
@@ -42,15 +43,15 @@ export default async function OrdersPage() {
                                             <TableHead>Status</TableHead>
                                         </TableRow>
                                     </TableHeader>
-                                    <OrdersComponent orders={orders} />
+                                    {/* <OrdersComponent orders={orders} /> */}
                                 </Table>
                                 <ScrollBar orientation="horizontal" />
                             </ScrollArea>
                         </CardContent>
                     </Card>
                 ) : (
-                    <div className="flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-                        <FileX className="h-24 w-24 text-gray-400 mb-4" />
+                    <div className="flex flex-col items-center justify-center mx-auto py-12 px-4 sm:px-6 lg:px-8">
+                        <FileX className="h-24 w-24 text-gray-400 mb-4 animate-pulse" />
                         <h2 className="text-2xl font-semibold text-gray-900">
                             No orders found
                         </h2>

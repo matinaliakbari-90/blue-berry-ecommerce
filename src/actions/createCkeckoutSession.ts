@@ -56,7 +56,7 @@ export async function createCheckoutSession(items: GroupedCartItems[], metadata:
                         images: item.product.image ? [urlFor(item.product.image).url()] : undefined,
                     },
                 },
-                quantity: item.quantity,
+                quantity: item.quantity
             })),
         };
 

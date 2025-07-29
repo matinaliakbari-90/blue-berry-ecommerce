@@ -7,10 +7,16 @@ import { User } from "lucide-react";
 import { BsBasket } from "react-icons/bs";
 import { ClerkLoaded, SignedIn, SignInButton, UserButton } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs/server";
+import { getMyOrders } from "@/sanity/helpers";
 
 export default async function Header() {
 
-    const user = await currentUser()
+    const user = await currentUser();
+
+    let orders = null;
+    if (user?.id) {
+        orders = await getMyOrders(user.id);
+    }
 
     return (
         <header className="w-full bg-white py-3 border-b border-b-gray-300 fixed z-50 left-0 top-0 right-0 shadow-md">
@@ -32,7 +38,7 @@ export default async function Header() {
                                 <BsBasket className="text-darkBlue w-6 h-6" />
                                 <div className="flex flex-col">
                                     <p className="text-xs">
-                                        <span className="font-semibold">0</span> items
+                                        <span className="font-semibold">{orders?.length}</span> items
                                     </p>
                                     <p className="font-semibold">Orders</p>
                                 </div>
