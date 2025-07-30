@@ -61,7 +61,7 @@ export default function OrderDetailsDialog({ order, isOpen, onClose }: OrderDeta
                                     {product?.product && product?.product?.name}
                                 </TableCell>
 
-                                <TableCell>{product?.quantity}</TableCell>
+                                <TableCell className="text-center">{product?.quantity}</TableCell>
                                 
                                 <TableCell>
                                     <PriceFormatter amount={product?.product?.price} className="text-black font-medium" />
