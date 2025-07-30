@@ -5,7 +5,7 @@ import Link from "next/link";
 import CartIcon from "./CartIcon";
 import { User } from "lucide-react";
 import { BsBasket } from "react-icons/bs";
-import { ClerkLoaded, SignedIn, SignInButton, UserButton } from "@clerk/nextjs";
+import { ClerkLoaded, SignedIn, UserButton } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs/server";
 import { getMyOrders } from "@/sanity/helpers";
 
@@ -53,7 +53,7 @@ export default async function Header() {
                                     <p className="font-semibold">{user?.firstName}</p>
                                 </div>
                             </div> : (
-                                <SignInButton mode="modal">
+                                <Link href="/sign-in">
                                     <div className="flex items-center text-sm gap-2 border border-gray-300 px-2 py-1 rounded-md shadow-md hover:shadow-none hoverEffect">
                                         <User className="w-6 h-6 text-darkBlue" />
                                         <div>
@@ -63,7 +63,7 @@ export default async function Header() {
                                             </div>
                                         </div>
                                     </div>
-                                </SignInButton>
+                                </Link>
                             )}
                     </ClerkLoaded>
                 </div>
