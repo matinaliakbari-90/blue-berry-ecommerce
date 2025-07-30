@@ -46,7 +46,7 @@ export default function OrdersComponent({ orders }: { orders: MY_ORDERS_QUERYRes
                                             : "bg-yellow-100 text-yellow-800"
                                             }`}
                                         >
-                                            {order?.status.charAt(0).toUpperCase() + order?.status.slice(1)}
+                                            {order.status.charAt(0).toUpperCase() + order.status.slice(1)}
                                         </span>
                                     )}
                                 </TableCell>

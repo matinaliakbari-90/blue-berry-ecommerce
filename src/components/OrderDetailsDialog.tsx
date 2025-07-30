@@ -19,7 +19,7 @@ export default function OrderDetailsDialog({ order, isOpen, onClose }: OrderDeta
         <Dialog open={isOpen} onOpenChange={onClose}>
             <DialogContent className="max-w-3xl">
                 <DialogHeader>
-                    <DialogTitle>Order Details - {order.orderNumber}</DialogTitle>
+                    <DialogTitle>Order Details: {order.orderNumber}</DialogTitle>
                 </DialogHeader>
                 <div className="mt-4">
                     <p>
@@ -54,13 +54,15 @@ export default function OrderDetailsDialog({ order, isOpen, onClose }: OrderDeta
                                             alt="productImage"
                                             width={50}
                                             height={50}
-                                            className="border rounded-sm"
+                                            className="border rounded-sm hover:scale-105 hoverEffect"
                                         />
                                     )}
 
                                     {product?.product && product?.product?.name}
                                 </TableCell>
+
                                 <TableCell>{product?.quantity}</TableCell>
+                                
                                 <TableCell>
                                     <PriceFormatter amount={product?.product?.price} className="text-black font-medium" />
                                 </TableCell>
