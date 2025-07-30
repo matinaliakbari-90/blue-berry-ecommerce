@@ -48,7 +48,7 @@ export default async function Header() {
                         {user ?
                             <div className="flex items-center text-sm gap-2 border border-gray-300 px-2 py-1 rounded-md shadow-md hover:shadow-none hoverEffect">
                                 <UserButton />
-                                <div className="flex flex-col">
+                                <div className="sm:flex flex-col hidden">
                                     <p className="text-xs text-gray-500">Welcome Back</p>
                                     <p className="font-semibold">{user?.firstName}</p>
                                 </div>
