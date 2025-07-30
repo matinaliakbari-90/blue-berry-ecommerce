@@ -13,26 +13,26 @@ export default function SignUpPage() {
     const redirectUrl = searchParams.get("redirect_url") || "/";
 
     return (
-        <div className="min-h-screen bg-linear-to-br flex flex-col items-center justify-center p-4">
+        <div className="min-h-screen flex flex-col items-center justify-center p-4">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="w-full max-w-md">
                 <div className="rounded-2xl shadow-xl overflow-hidden">
                     <div className="relative">
                         <div className="absolute top-4 left-4 z-10">
                             <Link href="/">
-                                <button className="p-2 shadow-md transition-all duration-300">
+                                <button className="p-2 shadow-md rounded-full transition-all duration-300 cursor-pointer">
                                     <ArrowLeft className="h-5 w-5" />
                                 </button>
                             </Link>
                         </div>
                         <div className="p-6 text-center">
                             <div className="flex justify-center mb-4">
-                                <Link href={"/"}>
+                                <div>
                                     <Image src={logo} className="w-24" width={100} height={100} alt="logo" />
-                                </Link>
+                                </div>
                             </div>
                             <h1 className="text-2xl font-bold">Create an Account</h1>
                             <p className="text-sm opacity-80 mt-1">
-                                Join ShopTech for the best shopping experience
+                                Join blue berry shop for the best shopping experience
                             </p>
                         </div>
                     </div>

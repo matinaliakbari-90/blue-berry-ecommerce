@@ -29,7 +29,7 @@ export default async function Header() {
                         <input type="text" name="query" className="w-full max-w-7xl rounded-md hoverEffect bg-gray-50 text-gray-800 px-4 py-2.5 focus:outline-0 focus:ring-2 focus:ring-darkBlue border border-gray-200" placeholder="Search for products ..." />
                     </Form>
                 </div>
-                <div className="flex items-center gap-5">
+                <div className="flex items-center gap-5 mx-auto">
                     <CartIcon />
 
                     <ClerkLoaded>
