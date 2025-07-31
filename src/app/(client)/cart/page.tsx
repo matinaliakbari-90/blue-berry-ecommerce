@@ -70,11 +70,11 @@ export default function CartPage() {
     return (
         <div>
             {isSignedIn ? (
-                <div className="bg-gray-50 md:min-h-screen md:mt-35 mt-32">
+                <div className="bg-gray-50 md:min-h-screen md:mt-17 mt-32">
                     <div className="max-w-7xl mx-auto px-4">
                         {groupedItems?.length ? (
                             <>
-                                <div className="flex items-center gap-2 pb-5 pt-12">
+                                <div className="flex items-center gap-2 pb-5 pt-10">
                                     <ShoppingBag className="h-6 w-6 text-primary" />
                                     <h1 className="text-2xl font-semibold">Shopping Cart</h1>
                                 </div>
