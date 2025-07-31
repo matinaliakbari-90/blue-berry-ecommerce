@@ -29,7 +29,7 @@ export default async function Header() {
                         <input type="text" name="query" className="w-full max-w-7xl rounded-md hoverEffect bg-gray-50 text-gray-800 px-4 py-2.5 focus:outline-0 focus:ring-2 focus:ring-darkBlue border border-gray-200" placeholder="Search for products ..." />
                     </Form>
                 </div>
-                <div className="flex items-center gap-5 mx-auto">
+                <div className="flex items-center gap-2.5 sm:gap-5 mx-auto">
                     <CartIcon />
 
                     <ClerkLoaded>
@@ -48,9 +48,9 @@ export default async function Header() {
                         {user ?
                             <div className="flex items-center text-sm gap-2 border border-gray-300 px-2 py-1 rounded-md shadow-md hover:shadow-none hoverEffect">
                                 <UserButton />
-                                <div className="sm:flex flex-col hidden">
-                                    <p className="text-xs text-gray-500">Welcome Back</p>
-                                    <p className="font-semibold">{user?.firstName}</p>
+                                <div className="flex flex-col">
+                                    <p className="text-[11px] sm:text-xs text-gray-500">Welcome Back</p>
+                                    <p className="font-semibold text-[13px] sm:text-[14px]">{user?.firstName}</p>
                                 </div>
                             </div> : (
                                 <Link href="/sign-in">
