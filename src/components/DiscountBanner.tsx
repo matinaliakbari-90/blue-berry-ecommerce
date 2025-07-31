@@ -1,10 +1,10 @@
-/* eslint-disable @next/next/no-img-element */
 import { SALE_QUERYResult } from "../../sanity.types";
 import { Card, CardContent } from "./ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { urlFor } from "@/sanity/lib/image";
+import Image from "next/image";
 
 export default function DiscountBanner({ sales }: { sales: SALE_QUERYResult }) {
     return (
@@ -44,7 +44,7 @@ export default function DiscountBanner({ sales }: { sales: SALE_QUERYResult }) {
 
                                     {sale?.image && (
                                         <div className="w-full md:w-1/2 h-auto flex items-center justify-center py-2">
-                                            <img
+                                            <Image
                                                 src={urlFor(sale?.image).size(1000, 1000).url()}
                                                 alt="bannerImage"
                                                 className="h-full object-cover duration-300 ease-in-out hover:scale-105"
