@@ -14,7 +14,7 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ error: "No signature" }, { status: 400 });
     }
 
-    const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
+    const webhookSecret = 'whsec_mxbYWm00IfrG9vHDN09u6MC02qljgt74';
     if (!webhookSecret) {
         console.error("Stripe webhook secret is not set");
         return NextResponse.json({ error: "Stripe webhook secret is not set" }, { status: 400 });
