@@ -50,7 +50,8 @@ export default async function Header() {
                                 <UserButton />
                                 <div className="flex flex-col">
                                     <p className="text-[11px] sm:text-xs text-gray-500">Welcome Back</p>
-                                    <p className="font-semibold text-[13px] sm:text-[14px]">{user?.firstName}</p>
+                                    <p className="font-semibold text-[13px] hidden sm:block sm:text-[14px]">{user?.fullName}</p>
+                                    <p className="font-semibold text-[13px] block sm:hidden sm:text-[14px]">{user?.firstName}</p>
                                 </div>
                             </div> : (
                                 <Link href="/sign-in">
